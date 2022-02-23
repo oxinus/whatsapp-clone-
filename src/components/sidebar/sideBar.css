@@ -1,0 +1,48 @@
+.sideBar__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px rgb(179, 177, 177) solid;
+}
+.sideBar__header{
+    height: 70px;
+    padding: 10px;
+    background-color: rgb(236, 232, 232);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sideBar__header__logout{
+    background-color: white;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+.sideBar__header__logout:hover{
+    background-color: rgb(221, 220, 220);
+}
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.sideBar__chats{
+    background-color: white;
+    flex: 1;
+    overflow-y: auto;
+}
+.sideBar__search{
+    height: 30px;
+    background-color: rgb(226, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add__chatRoom{
+    border-bottom: 3px rgb(245, 242, 242) solid;
+    padding: 10px;
+}
+.add__chatRoom h3{
+    cursor: pointer;
+    display: inline;
+}

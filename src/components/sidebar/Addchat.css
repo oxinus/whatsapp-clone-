@@ -1,0 +1,9 @@
+.addchat__container{
+    border-bottom: 3px rgb(245, 242, 242) solid;
+    padding: 10px;
+}
+.addchat__container h3{
+    cursor: pointer;
+    display: inline;
+    text-transform: capitalize;
+}

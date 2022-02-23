@@ -1,0 +1,27 @@
+.chat__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chat__header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 70px;
+}
+.chatHeader__content{
+    margin-left: 24px;
+}
+.chatHeader__content h4{
+    margin-bottom: 6px;
+}
+.chatHeader__content h5{
+    color: rgb(139, 137, 137);
+    font-weight: 400;
+}
+.chat__messages{
+    height: 83%;
+    background: url('../../img/chatBackground.jpg') ;
+    overflow: auto;
+}
+
