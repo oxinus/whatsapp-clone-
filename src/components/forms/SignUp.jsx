@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, memo } from 'react';
 import { useFilePicker } from 'use-file-picker';
 import db, {auth, storage} from '../../firebase';
-import {MsgContext} from '../../App';
+import {UserContext} from '../context/AppContext';
 import './signup.css';
 import UserProfile from '../../img/profile.jpg';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const SignUP = () => {
     const [username, setUsername] = useState('');
     const [imgLoading, setImgLoading] = useState(false)
     const [imgUrl, setImgUrl] = useState('');
-    const {setUser} = useContext(MsgContext);
+    const {setUser} = useContext(UserContext);
 
     // initial state and definitions for use file picker package
     const [openFileSelector, filesContent] = useFilePicker({
@@ -92,4 +92,4 @@ const SignUP = () => {
     )
 }
 
-export default SignUP;
+export default memo(SignUP);

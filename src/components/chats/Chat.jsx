@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, memo } from 'react';
 import ChatBody from './ChatBody';
 import {useParams} from 'react-router-dom';
 import db from '../../firebase';
 import ChatTyping from './ChatTyping';
 import './Chat.css';
-import {MsgContext} from '../../App' 
+import {UserContext} from '../context/AppContext'; 
 
 const Chat = () => {
-    const {messages, setMessages} = useContext(MsgContext)
+    const {messages, setMessages} = useContext(UserContext)
     const {roomID} = useParams()
     const [roomName, setRoomName] = useState('');
     const [lastSent, setLastSent] = useState();
@@ -60,4 +60,4 @@ const Chat = () => {
     )
 }
 
-export default Chat;
+export default memo(Chat);

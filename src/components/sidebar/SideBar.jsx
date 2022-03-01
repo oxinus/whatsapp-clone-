@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useContext, useEffect, memo} from 'react';
 import SidebarBody from './SidebarBody';
 import { confirm } from "react-confirm-box";
 import Addchats from './Addchats';
@@ -6,12 +6,13 @@ import './sideBar.css';
 import db, { auth } from '../../firebase';
 import UserProfile from '../../img/profile.jpg'
 import { Link} from 'react-router-dom';
-import {MsgContext} from '../../App'
+import {UserContext} from '../context/AppContext';
+
 
 const SideBar = () => {
     
-    const {profile, setUser, rooms, setRooms} = useContext(MsgContext)
-
+    const {profile, setUser, rooms, setRooms} = useContext(UserContext);
+    
 
     // get all rooms name and id from firestore after component rendered
     useEffect(()=> {
@@ -30,7 +31,8 @@ const SideBar = () => {
     }, [])
 
     
-    const confirmAction = async() => {
+    const signoutHandler = async () => {
+        
     const options = {
         labels: {
             confirmable: "Yes",
@@ -52,7 +54,7 @@ const SideBar = () => {
 
                 {/* if user has profile picture in storage show them otherwise show the default we defined */}
                 <img  src={profile ? profile : UserProfile} className='avatar' alt='avatar' />
-                <button className='sideBar__header__logout' onClick={confirmAction}>
+                <button className='sideBar__header__logout' onClick={signoutHandler}>
                     sign out
                 </button>
                     
@@ -72,4 +74,4 @@ const SideBar = () => {
     )
 }
 
-export default SideBar
+export default memo(SideBar);

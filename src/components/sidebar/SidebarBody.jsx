@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import {useNavigate} from "react-router-dom";
 import { confirm } from "react-confirm-box";
 import db from '../../firebase';
@@ -15,8 +15,8 @@ const SidebarBody = ({room, rooms}) => {
         
         db.collection('rooms').doc(room.id).collection('messages').orderBy('timestamp', 'desc').onSnapshot(snapshot => (
             setLastMsg(snapshot.docs[0]?.data().msg))
-    )
-}, [])
+        )
+    }, [])
 
     const editRoom = async (roomID) => {
 
@@ -34,6 +34,7 @@ const SidebarBody = ({room, rooms}) => {
 
 
     const deleteRoom = async(roomID) => {
+
         const options = {
             labels: {
                 confirmable: "Yes",
@@ -81,4 +82,4 @@ const SidebarBody = ({room, rooms}) => {
     )
 }
 
-export default SidebarBody;
+export default memo(SidebarBody);

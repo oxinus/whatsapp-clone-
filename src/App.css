@@ -35,7 +35,7 @@ input:focus{
 }
 .sideBar{
     flex: .3;
-    min-width: 260px;
+    min-width: 270px;
 }
 .chat{
     flex: .7;

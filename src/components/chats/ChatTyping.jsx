@@ -1,6 +1,6 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState, memo } from 'react';
 import db from '../../firebase'
-import {MsgContext} from '../../App';
+import {UserContext} from '../context/AppContext';
 import "firebase/compat/firestore";
 import './ChatTyping.css';
 import Picker from 'emoji-picker-react';
@@ -9,7 +9,7 @@ const ChatTyping = ({roomID}) => {
 
     const [chatText, setChatText] = useState('')
     const [openningEmoji, setOpenningEmoji] = useState(false)
-    const {userName} = useContext(MsgContext)
+    const {userName} = useContext(UserContext)
     
 
   const onEmojiClick = (event, emojiObject) => {
@@ -87,4 +87,4 @@ const ChatTyping = ({roomID}) => {
     )
 }
 
-export default ChatTyping
+export default memo(ChatTyping);

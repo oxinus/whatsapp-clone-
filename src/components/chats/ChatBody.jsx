@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState, memo } from 'react';
 import { confirm } from "react-confirm-box";
 import db from '../../firebase';
 import './chatBody.css';
-import {MsgContext} from '../../App' 
+import {UserContext} from '../context/AppContext'; 
 
 
 const ChatBody = ({message, roomID}) => {
 
-    const {userName, messages} = useContext(MsgContext);
+    const {userName, messages} = useContext(UserContext);
     const [myChat, setMyChat] = useState(false);
 
 
@@ -23,6 +23,7 @@ const ChatBody = ({message, roomID}) => {
    
     // getting new msg from user take times so we should have asyns await func to handle that 
     const editMsg = async (messageID) => {
+
         let msgtoEdit = (messages.find(message => message.id === messageID)).msg
 
         // after we find the messsage to edit get the value from user to update it on firestore and set new time
@@ -69,4 +70,4 @@ const ChatBody = ({message, roomID}) => {
     )
 }
 
-export default ChatBody;
+export default memo(ChatBody);

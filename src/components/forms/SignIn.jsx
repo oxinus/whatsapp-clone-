@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, memo } from 'react';
 import {Link} from 'react-router-dom';
-import {MsgContext} from '../../App';
+import {UserContext} from '../context/AppContext';
 import {auth} from '../../firebase'
 import './signin.css';
 
@@ -8,7 +8,7 @@ const SignIn = () => {
 
     const [signinEmail, setSigninEmail] = useState('');
     const [signinPassword, setSigninPassword] = useState('');
-    const {setUser} = useContext(MsgContext)
+    const {setUser} = useContext(UserContext)
 
     const signinHandler = e => {
         e.preventDefault();
@@ -38,4 +38,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default memo(SignIn);

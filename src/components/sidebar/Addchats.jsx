@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import './Addchat.css';
 import db from '../../firebase';
 
@@ -20,4 +20,4 @@ const Addchats = () => {
     )
 }
 
-export default Addchats
+export default memo(Addchats);
