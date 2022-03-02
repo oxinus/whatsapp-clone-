@@ -1,6 +1,6 @@
 download or clone app 
 
-go to project directory and open terminal 
+go to app directory and open terminal 
 
 type npm i (to install all dependencies)
 
