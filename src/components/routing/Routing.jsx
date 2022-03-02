@@ -51,7 +51,8 @@ const Routing = () => {
 
                     {/* when user sign out its path is belong to rooms and it's unknown
                     so we should define a redirect path for them */}
-                    <Route path='*' element={<Navigate replace to='/signup' />}/>
+                    <Route path='/' element={<Navigate replace to='/signup' />}/>
+                    <Route path={`rooms/*`} element={<Navigate replace to='/signup' />}/>
             </Routes>
             }
 
