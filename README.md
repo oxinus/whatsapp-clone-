@@ -2,9 +2,9 @@ download or clone app
 
 go to app directory and open terminal 
 
-type npm i (to install all dependencies)
+npm i (to install all dependencies)
 
-type npm start (to start project on your local)
+npm start (to start project on your local)
 
  
  | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
