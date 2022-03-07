@@ -1,4 +1,4 @@
-download or clone app 
+# download or clone app 
 
 go to app directory and open terminal 
 
